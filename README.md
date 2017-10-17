@@ -11,7 +11,7 @@ You'll need a local machine (laptop/desktop) with the ability to run vms.
 
 1. Install [VirtualBox](<https://www.virtualbox.org/>) .
 1. Install [Vagrant](<https://www.vagrantup.com/>) .
-1. [clone](https://guides.github.com/) this git repo .
+1. Mirror this git repo using the instructions [here](https://help.github.com/articles/duplicating-a-repository). Then clone it locally. (**Please DO NOT fork the repo**)
 1. cd to the repo directoy.
 1. Run `vagrant up` and make sure you can ssh into both machines from your repo directory using `vagrant ssh server1` and `vagrant ssh server2`
 
@@ -32,11 +32,13 @@ Important note: the infrastructure should work out of the box. There's no hidden
 Great.  
 This exercise is simple, as an Operations Engineer you may run into production issues, in the first task you will jump start a Linux server, you will need to solve three issues that we encountered
 #### exercise1:
+in server 1, 
 Run the following command "curl http://www.textfiles.com/art/bnbascii.txt"
 What went wrong?
 Please fix the issue and add the command that fixes the issue to  `exercise1-fix.sh`
 
 #### Exercise2:
+in server 1, 
 Run the following command "curl http://www.ascii-art.de/ascii/ab/007.txt"
 What went wrong?
 Please fix the issue and add the command that fixes the issue to  `exercise2-fix.sh`
@@ -61,14 +63,14 @@ Please add the option to ssh between the two servers using names (server1 and se
 
 #### Exercise5:
 At times one would like to ssh between servers with out typing a password or the need to approve new servers,
-Please add the needed configuration in order to ssh password-less and withour host key checking.
+Please add the needed configuration in order to ssh password-less from server1 to sever2 and without host key checking.
 Script to update configuration should be put in the following files.
 
 * `exercise5-fix_server1.sh`
 * `exercise5-fix_server2.sh`
 
 #### Deliverables
-A GitHub Pull-Request to this repo, containing all the scripts mentioned above with the solutions to the exercises.
+A GitHub Pull-Request to **YOUR DUPLICATED REPO**, containing all the scripts mentioned above with the solutions to the exercises.
 
 PLEASE make sure your Pull Request contains all the requirements above, and doesn't contain any code you didn't change.
 
@@ -76,4 +78,6 @@ The Pull-Request should contain a file with your name and email (contact-details
 
 #### General Guidelines
 Your code should be as simple as possible.
-Your code should be tested by running “vagrant up” and verifying all fixes and tasks are implemented.
+Your code should be tested by running "vagrant destroy" and "vagrant up" and see all fixes and tasks are implemented.
+
+After completion please fill up this [form](https://goo.gl/forms/De2fMjDx57cZRl8H2) with all the relevant details
