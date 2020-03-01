@@ -1,5 +1,3 @@
 #!/bin/bash
 #add fix to exercise1 here
-sudo sed -ie "\|^127.0.0.1 textfiles.com\$|d" /etc/hosts
-
-#sudo reboot
+sudo ip route del 208.86.224.90/32   dev eth0 src 192.168.100.10
