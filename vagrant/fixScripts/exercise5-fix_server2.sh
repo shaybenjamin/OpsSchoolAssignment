@@ -5,7 +5,12 @@ sudo sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/' /etc/ssh
 
 sudo service ssh restart
 
-ssh-keygen -P "" -f /home/vagrant/.ssh/id_rsa
+#ssh-keygen -P "" -f /home/vagrant/.ssh/id_rsa
+
+ssh-keygen -P "" -f /root/.ssh/id_rsa
+cp ~/.ssh/id_rsa /home/vagrant/.ssh/id_rsa
+cp ~/.ssh/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
+
 sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub
 sudo chmod 777 /home/vagrant/.ssh/id_rsa
 # sudo chmod -R go= ~/.ssh/
