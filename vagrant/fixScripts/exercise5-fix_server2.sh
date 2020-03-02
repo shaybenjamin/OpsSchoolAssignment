@@ -8,8 +8,7 @@ sudo service ssh restart
 ssh-keygen -P "" -f /home/vagrant/.ssh/id_rsa
 sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub
 sudo chmod 777 /home/vagrant/.ssh/id_rsa
-#sudo chown -R vagrant:vagrant /home/vagrant/.ssh 
-sudo chmod -R go= ~/.ssh/
+# sudo chmod -R go= ~/.ssh/
 sshpass -p vagrant ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub root@192.168.100.10
 
 sshpass -p vagrant ssh root@192.168.100.10 "sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config && 
@@ -33,18 +32,6 @@ sshpass -p vagrant ssh root@192.168.100.10 "sudo sed -i 's/PasswordAuthenticatio
 cat ~/.ssh/authorized_keys >> /home/vagrant/.ssh/authorized_keys
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo service ssh restart
-sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub
-sudo chmod 777 /home/vagrant/.ssh/id_rsa
-#sudo chown -R vagrant:vagrant /home/vagrant/.ssh 
-sudo chmod -R go= ~/.ssh/
-
-# sudo service ssh restart
+# sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub
+# sudo chmod 777 /home/vagrant/.ssh/id_rsa
 # sudo chmod -R go= ~/.ssh/
-# sudo chown -R vagrant:vagrant ~/.ssh/ 
-
-# ssh-keygen -q -t rsa -N '' -f /home/vagrant/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
-# sshpass -p vagrant ssh-copy-id -f -i /home/vagrant/.ssh/id_rsa.pub root@server1
-#ssh-add
-
-
-
