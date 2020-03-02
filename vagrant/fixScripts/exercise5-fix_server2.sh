@@ -16,7 +16,8 @@ sshpass -p vagrant ssh root@192.168.100.10 "sudo sed -i 's/PasswordAuthenticatio
                                             sudo service ssh restart && 
                                             sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub && 
                                             sudo chmod 777 /home/vagrant/.ssh/id_rsa && 
-                                            sshpass -p vagrant ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub root@server2"
+                                            sshpass -p vagrant ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub root@server2 &&
+                                            cat ~/.ssh/authorized_keys >> /home/vagrant/.ssh/authorized_keys"
 
 #ssh root@192.168.100.10 "sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config"
 #ssh root@192.168.100.10 "sudo service ssh restart"
@@ -29,7 +30,7 @@ sshpass -p vagrant ssh root@192.168.100.10 "sudo sed -i 's/PasswordAuthenticatio
 # ssh root@192.168.100.10 "sudo chmod -R go= ~/.ssh/"
 
 #ssh root@192.168.100.10 "sshpass -p vagrant ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub root@server2"
-
+cat ~/.ssh/authorized_keys >> /home/vagrant/.ssh/authorized_keys
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo service ssh restart
 sudo chmod 777 /home/vagrant/.ssh/id_rsa.pub
